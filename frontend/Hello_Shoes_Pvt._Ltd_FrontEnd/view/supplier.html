@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../img/logo.png" sizes="32x32">
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>Supplier Service</title>
+
+    <link rel="stylesheet" href="../css/loginPage.css">
+    <link rel="stylesheet" href="../css/menuBar.css">
+    <link rel="stylesheet" href="../css/dashbord.css">
+    <link rel="stylesheet" href="../css/txt.css">
+    <link rel="stylesheet" href="../bootstrap-5.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/menuBar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Include Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+<div id="mobile_navi">
+    <div class="navigation">
+        <a href="javascript:void(0)" class="closebtn" id="closeButton" onclick="closeNav()">&times;</a>-->
+        <ul>
+            <li>
+                <a href="" >
+                          <span id="logo">
+                              <i class="fa-solid fa-shoe-prints"></i>
+                          </span>
+                    <span id="headTitle">Hello Shoes Pvt. Ltd</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/adminPanel.html" id="home-nav">
+                          <span class="icon">
+                              <i class="fa-solid fa-house"></i>
+                          </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/supplier.html" id="supplier-nav">
+                          <span class="icon">
+                              <i class="fa-solid fa-boxes-packing"></i>
+                          </span>
+                    <span class="title">Supplier</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/customerPage.html" id="customer-nav">
+                          <span class="icon">
+                              <i class="fa-solid fa-people-group"></i>
+                          </span>
+                    <span class="title">Customer</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/item.html" id="item-nav">
+                          <span class="icon">
+                              <i class="fa-solid fa-boxes-stacked"></i>
+                          </span>
+                    <span class="title">Items</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/order.html" id="sale-nav">
+                          <span class="icon">
+                              <i class="fa-solid fa-cart-shopping"></i>
+                          </span>
+                    <span class="title">Sale</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/employee.html" id="employee-nav">
+                          <span class="icon">
+                              <i class="fa-solid fa-user-tie"></i>
+                          </span>
+                    <span class="title">Employee</span>
+                </a>
+            </li>
+            <li>
+                <a href="../index.html">
+                          <span class="icon">
+                              <i class="fa-solid fa-right-from-bracket"></i>
+                          </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="main">
+        <span id="menuButton" style="font-size:30px;cursor:pointer; color: #000000" onclick="openNav()">&#9776;</span>
+    </div>
+
+</div>
+
+<div class="container-fluid dashBordSet">
+
+    <div class="row">
+
+        <div class="col-12 col-xxl-9 col-xl-9 col-lg-9 col-md-9">
+            <h1>Supplier Service</h1>
+        </div>
+
+        <div class="col-12 col-xxl-3 col-xl-3 col-lg-3 col-md-3">
+            <div class="form-group">
+                <div class="search-container" style="position: relative;">
+                    <input type="text" class="form-control fw-bold " id="supplierSearchTxt" placeholder=""/>
+                    <i class="fas fa-search search-icon" id="supplierSearchBtn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-5 rowColur">
+
+
+            <div class="col-12 col-xxl-2 col-xl-2 col-lg-3 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="supplierCodeTxt" class="text-black fw-bold ">Supplier  Code</label>
+                    <div class="search-container">
+                        <input type="text" class="form-control fw-bold border border-1  fw-bold " id="supplierCodeTxt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xxl-2 col-xl-2 col-lg-3 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="supplierNameTxt" class="text-black fw-bold ">Supplier  Name</label>
+                    <div class="search-container">
+                        <input type="text" class="form-control fw-bold border border-1  fw-bold " id="supplierNameTxt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xxl-2 col-xl-2 col-lg-6 col-md-6 col-sm-6 mt-3">
+                <div class="form-group">
+                    <label for="supCategoryOption" class="text-black fw-bold">Category</label>
+                    <div class="search-container">
+                        <select class="form-select border border-1  fw-bold" aria-label="Default select example" id="supCategoryOption">
+                            <option selected value="">Select Category</option>
+                            <option  value="NATIONAL">NATIONAL</option>
+                            <option  value="INTERNATIONAL">INTERNATIONAL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="address1Txt" class="text-black fw-bold ">Address No</label>
+                    <div class="search-container">
+                        <input type="text" class="form-control fw-bold border border-1  fw-bold " id="address1Txt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="address2Txt" class="text-black fw-bold ">Lane</label>
+                    <div class="search-container">
+                        <input type="text" class="form-control fw-bold border border-1  fw-bold " id="address2Txt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="address3Txt" class="text-black fw-bold ">City</label>
+                    <div class="search-container">
+                        <input type="text" class="form-control fw-bold border border-1  fw-bold " id="address3Txt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="address4Txt" class="text-black fw-bold ">State</label>
+                    <div class="search-container">
+                        <input type="text" class="form-control fw-bold border border-1  fw-bold " id="address4Txt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="address5Txt" class="text-black fw-bold ">Postal Code</label>
+                    <div class="search-container">
+                        <input type="text" class="form-control fw-bold border border-1  fw-bold " id="address5Txt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="address6Txt" class="text-black fw-bold ">Country</label>
+                    <div class="search-container">
+                        <input type="text" class="form-control fw-bold border border-1  fw-bold " id="address6Txt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="contact1Txt" class="text-black fw-bold ">Contact 1</label>
+                    <div class="search-container">
+                        <input type="text" class="form-control fw-bold border border-1 fw-bold " id="contact1Txt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="contact2Txt" class="text-black fw-bold ">Contact 2</label>
+                    <div class="search-container">
+                        <input type="text" class="form-control fw-bold border border-1  fw-bold " id="contact2Txt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xxl-2 col-xl-6 col-lg-6 col-md-6 col-sm-6  mt-3">
+                <div class="form-group">
+                    <label for="mailTxt" class="text-black fw-bold ">Mail</label>
+                    <div class="search-container">
+                        <input type="email" class="form-control fw-bold border border-1  fw-bold " id="mailTxt" placeholder="" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-xxl-3 col-xl-6 col-lg-12 col-sm-6 col-md-6 d-flex justify-content-center mt-4 mt-xxl-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4  ">
+                <button type="button" class="btn btn-success fw-bold col-12 " id="supplierSaveBtn">Save Supplier</button>
+            </div>
+
+            <div class="col-12 col-xxl-3 col-xl-6 col-lg-12 col-sm-6 col-md-6 d-flex justify-content-center mt-4 mt-xxl-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4">
+                <button type="button" class="btn btn-warning fw-bold col-12 " id="supplierUpdateBtn">Update Supplier</button>
+            </div>
+
+            <div class="col-12 col-xxl-3 col-xl-6 col-lg-12 col-sm-6 col-md-6 d-flex justify-content-center mt-4 mt-xxl-4 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 ">
+                <button type="button" class="btn btn-danger fw-bold col-12 " id="supplierDeleteBtn">Delete Supplier</button>
+            </div>
+
+
+
+            <div class="col-12   mt-1 table-responsive p-0  mt-5">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Supplier Code</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Address No</th>
+                        <th scope="col">Lane</th>
+                        <th scope="col">City</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Postal Code</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Contact 1</th>
+                        <th scope="col">Contact 2</th>
+                        <th scope="col">Mail</th>
+    
+                    </tr>
+                    </thead>
+                    <tbody id="supplier_Table">
+    
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+</div>
+
+<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../Controller/mobileNavJs.js"></script>
+<script src="../Controller/SupplierController.js" type="module"></script>
+</body>
+</html>
