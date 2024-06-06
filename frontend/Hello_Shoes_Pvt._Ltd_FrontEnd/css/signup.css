@@ -1,0 +1,28 @@
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #ABAFFB;;
+}
+
+#logo {
+    position: absolute;
+    left: 315px;
+    top: 70px;
+    width: 75%;
+    height: 75%;
+    opacity: .3;
+}
+
+#createHead {
+    position: relative;
+    top: 33px;
+    left: 395px;
+    font-size: xx-large;
+    font-family: 'K2D', sans-serif;
+}
+
+#formAccount {
+    position: absolute;
+    top: 280px;
+    left: 120px;
+}
