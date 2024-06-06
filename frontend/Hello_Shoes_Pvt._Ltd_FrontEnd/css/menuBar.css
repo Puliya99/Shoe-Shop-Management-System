@@ -1,4 +1,3 @@
-
 .sidenav {
     height: 98%;
     width: 0;
@@ -38,12 +37,9 @@
     padding: 16px;
 }
 
-
-
 body {
     font-family: 'K2D', sans-serif;
 }
-
 
 .btnCss{
     color: black;
@@ -51,7 +47,6 @@ body {
     font-weight: bold;
     width: 236px;
     height: 64px;
-
 }
 
 .btnImageCss {
@@ -60,12 +55,14 @@ body {
     margin-right: 26px; /* Adjust the spacing between the image and text as needed */
     vertical-align: middle; /* Align the image vertically with the text */
 }
+
 .dashbordImagecss {
     width: 63px;
     height: 58px;
     margin-right: 26px; /* Adjust the spacing between the image and text as needed */
     vertical-align: middle; /* Align the image vertically with the text */
 }
+
 .saleImage{
     margin-right: 68px;
 }
@@ -79,7 +76,6 @@ body {
    position: absolute;
    left: 280px;
    width: calc(100% - 280px);
-
 }
 
 .rowColur {
@@ -89,12 +85,10 @@ body {
     top: 30px;
 }
 
-
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
-
 
 @media (min-width: 748px) {
     #menuButton {
@@ -105,13 +99,11 @@ body {
     }
 }
 
-
 @media (max-width: 748px) {
     .dashBordSet{
         position: absolute;
         left: 10px;
         width: 100%;
-
     }
 }
 

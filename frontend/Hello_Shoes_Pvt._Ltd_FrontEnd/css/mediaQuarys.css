@@ -5,7 +5,6 @@
         max-width: none; /* Remove any max-width constraint */
         right: 3%;
         margin-top: 8rem !important;
-
     }
 }
 
@@ -16,7 +15,6 @@
         max-width: none; /* Remove any max-width constraint */
         right: 3%;
         margin-top: 14rem !important;
-
     }
 }
 
@@ -27,7 +25,6 @@
         max-width: none; /* Remove any max-width constraint */
         right: 3%;
         margin-top: 14rem !important;
-
     }
 }
 
@@ -38,7 +35,6 @@
         max-width: none; /* Remove any max-width constraint */
         bottom: 0;
         margin-top: 23rem !important;
-
     }
     #about{
         font-size: 16px;
@@ -47,5 +43,4 @@
  #companyName{
      font-size: 36px;
  }
-
 }

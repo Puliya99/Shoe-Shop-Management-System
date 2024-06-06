@@ -21,18 +21,23 @@ body {
 .w-107{
     width: 108% !important;
 }
+
 .ml-5 {
     margin-left: -10% !important;
 }
+
 .ml-25 {
     margin-left: 24% !important;
 }
+
 .ml-1{
     margin-left: 11% !important;
 }
+
 .mt-10 {
     margin-top: 10rem !important;
 }
+
 .mt-24 {
     margin-top: 24rem !important;
 }
@@ -40,6 +45,7 @@ body {
 .w-16 {
     width: 16% !important;
 }
+
 .fs-55{
     font-size: 55px;
 }
@@ -47,6 +53,7 @@ body {
 a {
     text-decoration: none; /* Remove underline */
 }
+
 form {
     height: 21px;
 }
@@ -69,7 +76,6 @@ form {
     pointer-events: none; /* Disable pointer events on the icon */
     color: #888; /* Icon color */
 }
-
 
 .bg-shade{
     background-color: #0d0d6a;
