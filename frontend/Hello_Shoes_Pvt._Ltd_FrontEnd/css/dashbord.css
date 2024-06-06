@@ -1,0 +1,157 @@
+.h-200{
+    height: 200px;
+}
+.h-100c {
+    height: 200px;
+    position: relative;
+    top: 60px;
+}
+
+.h-511 {
+    position: relative;
+    bottom: 35px;
+    height: 511px;
+    width: 600px;
+}
+
+@media (max-width: 575px) {
+    .mt-8 {
+        margin-top: 8rem !important;
+    }
+}
+
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab&family=Satisfy&display=swap');
+
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.contain {
+    position: relative;
+    width: 100%;
+}
+
+/* =============== Navigation ================ */
+.navigation {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: var(--black1);
+    transition: 0.5s;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.navigation.active {
+    width: 80px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+    background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+    position: relative;
+    left: -15px;
+    margin-bottom: 100px;
+    pointer-events: none;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+    color: var(--blue);
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+}
+.navigation ul li a .icon i {
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+
+}
+
+
+#logo {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+#headTitle {
+    position: relative;
+    top: 25px;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+
+#userDashBord{
+    margin-top: -10rem;
+}
+
