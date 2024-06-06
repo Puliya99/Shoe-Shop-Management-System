@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+    <link rel="icon" type="image/x-icon" href="../img/logo.png" sizes="32x32">
+    <link rel="stylesheet" href="../bootstrap-5.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/menuBar.css">
+    <link rel="stylesheet" href="../css/loginPage.css">
+    <link rel="stylesheet" href="../css/dashbord.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div id="mobile_navi">
+    <div class="navigation">
+        <a href="javascript:void(0)" class="closebtn" id="closeButton" onclick="closeNav()">&times;</a>
+        <ul>
+            <li>
+                <a href="#">
+                    <span id="logo">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </span>
+                    <span id="headTitle">Hello Shoes Pvt. Ltd</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/adminPanel.html" id="home-nav">
+                    <span class="icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/supplier.html" id="supplier-nav">
+                    <span class="icon">
+                        <i class="fa-solid fa-boxes-packing"></i>
+                    </span>
+                    <span class="title">Supplier</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/customerPage.html" id="customer-nav">
+                    <span class="icon">
+                        <i class="fa-solid fa-people-group"></i>
+                    </span>
+                    <span class="title">Customer</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/item.html" id="item-nav">
+                    <span class="icon">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </span>
+                    <span class="title">Items</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/order.html" id="sale-nav">
+                    <span class="icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </span>
+                    <span class="title">Sale</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../view/employee.html" id="employee-nav">
+                    <span class="icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </span>
+                    <span class="title">Employee</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../index.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="main">
+        <span id="menuButton" style="font-size:30px;cursor:pointer; color: #000000" onclick="openNav()">&#9776;</span>
+    </div>
+
+</div>
+
+<div class="container-fluid dashBordSet">
+    <div class="row">
+
+        <div class="col-12 col-xxl-10 col-xl-10 col-lg-9 col-md-8 col-sm-7">
+        </div>
+
+        <div class="col-12 col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-5">
+            <i class="fa-solid fa-user"></i> <h3 id="txtA_U"> Admin</h3>
+        </div>
+
+        <div class="col-12">
+            <h2>Welcome to Hello Shoes Management System</h2>
+        </div>
+
+        <div class="col-11 col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6 h-100c rounded-4 d-flex align-items-center mt-5 ml-1 adminPanelDetails">
+            <div class="row mt-5 adminPanelDetails">
+                <div class="col-12 col-xxl-12 h-100c bg-shade rounded-4 d-flex align-items-center mt-5 ml-1 adminPanelDetails">
+                    <img src="../img/totalSale.png" class="dashbordImagecss adminPanelDetails mt-4 mr-3" alt="">
+                    <div>
+                        <h2 class="text-center adminPanelDetails text-white">Total Sale</h2>
+                        <h3 class="text-center adminPanelDetails text-white" id="totalSaleLbl">00</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xxl-12 h-100c bg-shade rounded-4 adminPanelDetails d-flex align-items-center mt-2 ml-1">
+                    <img src="../img/profit.png" class="dashbordImagecss adminPanelDetails mt-4 mr-3" alt="">
+                    <div>
+                        <h2 class="text-center adminPanelDetails text-white">Total Profit</h2>
+                        <h3 class="text-center adminPanelDetails text-white">00</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-11 col-xxl-4 col-xl-4 col-lg-4 col-md-10 col-sm-11 h-511 bg-shade rounded-4 d-flex flex-column justify-content-start align-items-center mt-6 ml-1 mt-8 adminPanelDetails" id="xx">
+            <h2 class="text-center adminPanelDetails text-white">Most Sale Item</h2>
+            <img src="../img/logo.png" alt="Shoe" class="mt-5 adminPanelDetails" style="max-width: 250px;" id="mostSaleImg">
+            <h2 class="text-center mt-5 adminPanelDetails text-white">Most Sale Item Qty</h2>
+            <h2 class="text-center adminPanelDetails text-white" id="mostSaleItemQty">00</h2>
+        </div>
+
+        <div class="col-11 d-flex justify-content-center mb-5" id="userDashBord">
+            <img src="../img/logo.png" alt="" class="img-fluid" style="margin-top: -6rem; width: 50%" id="img">
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../bootstrap-5.3.1-dist/lib/jquery.min.js"></script>
+<script src="../Controller/mobileNavJs.js"></script>
+<script src="../Controller/DashBordController.js" type="module"></script>
+</body>
+</html>
