@@ -1,6 +1,5 @@
 import {SupplierModel} from "../Model/SupplierModel.js";
 
-
 // Save Suppliers
 $('#supplierSaveBtn').on('click', ()=>{
 
@@ -17,9 +16,7 @@ $('#supplierSaveBtn').on('click', ()=>{
     var contact2 = $('#contact2Txt').val();
     var mail = $('#mailTxt').val();
 
-
     if (validate(supplierCode,"Supplier Code") && validate(supplierName,"Supplier Name") && validate(category,"Category") && validate(address1,"Address 1") && validate(address2,"Address 2") && validate(address3,"Address 3") && validate(address4,"Address 4")&& validate(address5,"Address 5")&& validate(address6,"Address 6") && validate(contact1,"Contact 1") && validate(contact2,"Contact 2") && validate(mail,"Mail")){
-
 
         var  supplierDetails = new SupplierModel(supplierCode,supplierName,category,address1,address2,address3,address4,address5,address6,contact1,contact2,mail);
         var supplierDetailsJson = JSON.stringify(supplierDetails);
@@ -49,12 +46,9 @@ $('#supplierSaveBtn').on('click', ()=>{
 
 })
 
-
 // Search Supplier
 $('#supplierSearchBtn').on('click', ()=>{
-
     var searchSupId = $('#supplierSearchTxt').val();
-
 
     if (validate(searchSupId,"Search Supplier Code")){
         $.ajax({
@@ -92,9 +86,7 @@ $('#supplierSearchBtn').on('click', ()=>{
                 alert("Failed");
             }
         });
-
     }
-
 })
 
 
@@ -116,9 +108,7 @@ $('#supplierUpdateBtn').on('click', ()=>{
     var contact2 = $('#contact2Txt').val();
     var mail = $('#mailTxt').val();
 
-
     if (validate(updateSupplierCode,"Update Supplier Code") && validate(supplierName,"Supplier Name") && validate(category,"Category") && validate(address1,"Address 1") && validate(address2,"Address 2") && validate(address3,"Address 3")&& validate(address4,"Address 4")&& validate(address5,"Address 5") && validate(address6,"Address 6") && validate(contact1,"Contact 1") && validate(contact2,"Contact 2") && validate(mail,"Mail")){
-
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success m-1",
@@ -136,10 +126,8 @@ $('#supplierUpdateBtn').on('click', ()=>{
         }).then((result) => {
             if (result.isConfirmed) {
 
-
                 var  supplierDetails = new SupplierModel(updateSupplierCode,supplierName,category,address1,address2,address3,address4,address5,address6,contact1,contact2,mail);
                 var supplierDetailsJson = JSON.stringify(supplierDetails);
-
                 $.ajax({
                     type: "PUT",
                     url: "http://localhost:9090/shoes/supplier/update/"+updateSupplierCode,
@@ -161,7 +149,6 @@ $('#supplierUpdateBtn').on('click', ()=>{
                         alert("Failed");
                     }
                 });
-
             } else if (
                 /* Read more about handling dismissals below */
                 result.dismiss === Swal.DismissReason.cancel
@@ -172,9 +159,6 @@ $('#supplierUpdateBtn').on('click', ()=>{
                 });
             }
         });
-
-
-
     }
 
 })
@@ -184,9 +168,7 @@ $('#supplierDeleteBtn').on('click', ()=>{
 
     var deleteSupplierCode = $('#supplierCodeTxt').val();
 
-
     if (validate(deleteSupplierCode,"Delete Supplier Code")){
-
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success m-1",
@@ -203,7 +185,6 @@ $('#supplierDeleteBtn').on('click', ()=>{
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-
                 $.ajax({
                     type: "DELETE",
                     url: "http://localhost:9090/shoes/supplier/delete/"+deleteSupplierCode,
@@ -229,7 +210,6 @@ $('#supplierDeleteBtn').on('click', ()=>{
                         });
                     }
                 });
-
             } else if (
                 /* Read more about handling dismissals below */
                 result.dismiss === Swal.DismissReason.cancel
@@ -240,9 +220,7 @@ $('#supplierDeleteBtn').on('click', ()=>{
                 });
             }
         });
-
     }
-
 })
 
 
@@ -260,14 +238,12 @@ const getAllSupplier = () => {
                 var newRow = "<tr><th scope='row'>" + suppliers.supplierCode + "</th><td>" + suppliers.supplierName + "</td><td>" + suppliers.category + "</td><td>" + suppliers.addressLine1 + "</td><td>" + suppliers.addressLine2   + "</td><td>" + suppliers.addressLine3 + "</td><td>" + suppliers.addressLine4 + "</td><td>" + suppliers.addressLine5 + "</td><td>" + suppliers.addressLine6 + "</td><td>" + suppliers.contact1  +  "</td><td>" + suppliers.contact2 +  "</td><td>" + suppliers.email +  "</td></tr>";
                 $("#supplier_Table").append(newRow);
             });
-
         },
         error: function(xhr, status, error) {
             alert("Failed");
         }
     });
 }
-
 
 // Validation Function
 function validate(value, field_name){
@@ -317,5 +293,4 @@ $("#supplier_Table").on("click","tr", function (){
     $("#contact1Txt").val(data.eq(8).text());
     $("#contact2Txt").val(data.eq(9).text());
     $("#mailTxt").val(data.eq(10).text());
-
 });

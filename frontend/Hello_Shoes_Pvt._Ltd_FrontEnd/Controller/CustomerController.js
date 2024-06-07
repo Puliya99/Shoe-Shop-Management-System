@@ -1,8 +1,6 @@
 import {CustomerModel} from "../Model/CustomerModel.js";
 
-
 let jwtToken = localStorage.getItem("jwtToken")
-
 
 // Save Customer
 $('#customerSaveBtn').on('click', ()=>{
@@ -20,12 +18,10 @@ $('#customerSaveBtn').on('click', ()=>{
     var joinDate = $('#custJoinDate').val();
     var level = $('#custLevel').val();
 
-
     if (validate(customerId,"Customer Id") && validate(customerName,"Customer Name") && validate(contact,"Contact") && validate(mail,"Mail") && validate(gender,"Gender") && validate(address1,"Address 1") && validate(address2,"Address 2") && validate(address3,"Address 3") && validate(address4,"Address 4") && validate(address5,"Address 5") && validate(bod,"Birthday") && validate(joinDate,"Join Date") && validate(level,"Level")){
 
         var customerDetails = new CustomerModel(customerId,customerName,gender,joinDate,level,bod,address1,address2,address3,address4,address5,contact,mail);
         var customerDetailsJson = JSON.stringify(customerDetails);
-
 
         const sendAJAX = (customerDetails,jwtToken) => {
             $.ajax({
@@ -53,11 +49,7 @@ $('#customerSaveBtn').on('click', ()=>{
         };
         sendAJAX(customerDetailsJson, jwtToken);
 
-
-
     }
-
-
 })
 
 
@@ -76,8 +68,6 @@ $('#custUpdateBtn').on('click', ()=>{
     var bod = $('#custBirthday').val();
     var joinDate = $('#custJoinDate').val();
     var level = $('#custLevel').val();
-
-
 
     if (validate(customerId,"Customer Id") && validate(customerName,"Customer Name") && validate(contact,"Contact") && validate(mail,"Mail") && validate(gender,"Gender") && validate(address1,"Address 1") && validate(address2,"Address 2") && validate(address3,"Address 3") && validate(address4,"Address 4") && validate(address5,"Address 5") && validate(bod,"Birthday") && validate(joinDate,"Join Date") && validate(level,"Level")) {
         const swalWithBootstrapButtons = Swal.mixin({
@@ -139,7 +129,6 @@ $('#custDeleteBtn').on('click', ()=>{
     var customerId = $('#customerIdTxt').val();
 
     if (validate(customerId,"Customer Id")){
-
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success m-1",
@@ -156,7 +145,6 @@ $('#custDeleteBtn').on('click', ()=>{
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-
                 $.ajax({
                     type: "DELETE",
                     url: "http://localhost:9090/shoes/customer/delete/"+ customerId,
@@ -184,7 +172,6 @@ $('#custDeleteBtn').on('click', ()=>{
                         });
                     }
                 });
-
             } else if (
                 /* Read more about handling dismissals below */
                 result.dismiss === Swal.DismissReason.cancel
@@ -195,16 +182,13 @@ $('#custDeleteBtn').on('click', ()=>{
                 });
             }
         });
-
     }
-
 })
 
 
 // Customer Search
 $('#customerSearchBtn').on('click', ()=>{
     var customerId = $('#custSearchTxt').val();
-
 
     if (validate(customerId,"Customer Id")){
         const sendAJAX = (jwtToken) => {
@@ -237,7 +221,6 @@ $('#customerSearchBtn').on('click', ()=>{
                         $("#custLevel").val(data.level);
                         $("#totalPoints").val(data.totalPoints);
                         $("#recentPurchaseDate").val(data.recentPurchaseDate);
-
                     }
                 },
                 error: function(xhr, status, error) {
@@ -247,8 +230,6 @@ $('#customerSearchBtn').on('click', ()=>{
         };
         sendAJAX(jwtToken);
     }
-
-
 })
 
 // Get All Customer
@@ -266,7 +247,6 @@ const getAllCustomerSendAJAX = (jwtToken) => {
                 var newRow = "<tr><th scope='row'>" + customer.customerCode + "</th><td>" + customer.customerName + "</td><td>" + customer.contactNumber + "</td><td>" + customer.email + "</td><td>" + customer.customerGender + "</td><td>" + customer.addressLine1 + "</td><td>" + customer.addressLine2 + "</td><td>" + customer.addressLine3 + "</td><td>" + customer.addressLine4 + "</td><td>" + customer.addressLine5 + "</td><td>" + customer.birthDay + "</td><td>" + customer.customerJoinDate + "</td><td>" + customer.level + "</td><td>" + customer.totalPoints + "</td><td>" + customer.recentPurchaseDate  + "</td></tr>";
                 $("#customer_Table").append(newRow);
             });
-
         },
         error: function(xhr, status, error) {
             alert("Failed");
@@ -296,7 +276,6 @@ $("#customer_Table").on("click","tr", function (){
     $("#recentPurchaseDate").val(data.eq(13).text());
 });
 
-
 // Text Fields Clear
 function clearTextFields() {
     $("#customerIdTxt").val("");
@@ -316,7 +295,6 @@ function clearTextFields() {
     $("#recentPurchaseDate").val("");
 }
 
-
 // Validation Function
 function validate(value, field_name){
     if (!value){
@@ -329,13 +307,9 @@ function validate(value, field_name){
     return true;
 }
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const jwtToken = localStorage.getItem("jwtToken");
     getAllCustomerSendAJAX(jwtToken)
     $('#custLevel').val('NEW')
-
 });
 
