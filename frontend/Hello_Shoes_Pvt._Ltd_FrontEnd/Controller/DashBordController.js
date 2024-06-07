@@ -16,7 +16,6 @@ $('#selectDate').on('change', ()=>{
         },
         success: function(data) {
             $('#totalSaleLbl').text(data);
-
         },
         error: function(xhr, status, error) {
             alert("Failed");
@@ -34,10 +33,9 @@ $('#selectDate').on('change', ()=>{
         beforeSend: function(xhr) {
             xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("jwtToken"));
         },
+
         success: function(data) {
-
             $('#mostSaleItemQty').text(data)
-
         },
         error: function(xhr, status, error) {
             alert("Failedddddd");
@@ -61,21 +59,14 @@ $('#selectDate').on('change', ()=>{
                     icon: 'info',
                     title: `This Select Date Have No Orders!`
                 });
-
             }else{
                 $('#mostSaleImg').attr('src', data);
             }
-
-
         },
         error: function(xhr, status, error) {
-
         }
     });
-
 })
-
-
 
 //   Jwt Decode
 // Function to decode the JWT and get the role
@@ -106,22 +97,15 @@ function getRoleFromToken(token) {
     let decodedToken = parseJwt(token);
     if (decodedToken && decodedToken.role) {
         const roles = decodedToken.role;
-
-
         if (roles.length > 0) {
             const authority = roles[0].authority;
-
-
             if (authority === "ROLE_USER"){
                 employeeWiseGetAllOrder(decodedToken.sub)
             }else{
                 getAllOrder();
             }
-
             return authority;
-
         }
-
     }
     return null;
 }
@@ -136,7 +120,6 @@ $(document).ready(function() {
         $('#orderBranchSelect').show();
         $('#accName').val("Admin")
         $('#txtA_U').text("ADMIN")
-
     }
     else if (roleFromToken === "ROLE_USER") {
         $('#adminDashBordDate').css('display', 'none');

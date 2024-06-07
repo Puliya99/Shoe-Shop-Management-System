@@ -13,10 +13,10 @@ function closeNav() {
 window.onload = function() {
     openNav(); // Call the openNav function when the window is loaded
 };
+
 document.addEventListener("DOMContentLoaded", function() {
     openNav(); // Call the openNav function when the DOM content is loaded
 });
-
 
 window.addEventListener('DOMContentLoaded', function() {
     if (749<innerWidth) {
